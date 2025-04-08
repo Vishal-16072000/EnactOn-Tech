@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
- // You can use any icon or emoji
+
 
 const ProductCard = ({ store, img }) => {
   const [isFavourite, setIsFavourite] = useState(false);
@@ -11,7 +11,7 @@ const ProductCard = ({ store, img }) => {
 
   return (
     <div className="relative w-[230px] h-[260px] bg-white shadow-2xl rounded-lg">
-      {/* ❤️ Favourite Button */}
+      {/* Favourite Button */}
       
 
 
