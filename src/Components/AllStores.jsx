@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { CategoryContext } from "../Context/CategoryContext"; // ✅ correct import
+import { CategoryContext } from "../Context/CategoryContext"; // correct import
 import StatusFilter from "./StatusFilter";
 import { CiSearch } from "react-icons/ci";
 import AlphabetFilter from "./AlphabetFilter";
@@ -13,7 +13,7 @@ const AllStores = ({ className }) => {
   const [showCategories, setShowCategories] = useState(false);
 
   const { setSort, updateFilters, filters, goToNextPage } =
-    useContext(CategoryContext); // ✅ get it from context
+    useContext(CategoryContext); // get it from context
 
   const handleFilterChange = (status) => {
     console.log(`Filter applied: ${status}`);
@@ -36,7 +36,7 @@ const AllStores = ({ className }) => {
       const clientHeight = document.documentElement.clientHeight;
 
       if (scrollTop + clientHeight >= scrollHeight - 100) {
-        // 👇 Load next page
+        // Load next page
         goToNextPage();
       }
     };
@@ -65,7 +65,7 @@ const AllStores = ({ className }) => {
           <SortDropdown
             onChange={(sortOption) => {
               console.log("Selected sort option:", sortOption);
-              setSort(sortOption); // ✅ context method
+              setSort(sortOption); // context method
             }}
           />
         </div>
