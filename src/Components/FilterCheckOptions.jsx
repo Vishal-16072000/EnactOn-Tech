@@ -4,7 +4,7 @@ import { CategoryContext } from "../Context/CategoryContext";
 const FilterCheckOptions = () => {
   const { updateFilters } = useContext(CategoryContext);
 
-  // ✅ Handle checkbox change dynamically
+
   const handleCheckboxChange = (e, key) => {
     const isChecked = e.target.checked;
     updateFilters(key, isChecked ? 1 : null); // 1 for true, null to remove filter
@@ -12,7 +12,7 @@ const FilterCheckOptions = () => {
 
   return (
     <div className="flex gap-2">
-      {/* ✅ Cashback Filter */}
+      {/* Cashback Filter */}
       <label className="inline-flex items-center">
         <input
           type="checkbox"
@@ -22,7 +22,7 @@ const FilterCheckOptions = () => {
         Cashback Enable
       </label>
 
-      {/* ✅ Promoted Filter */}
+      {/* Promoted Filter */}
       <label className="inline-flex items-center">
         <input
           type="checkbox"
@@ -32,7 +32,7 @@ const FilterCheckOptions = () => {
         Promoted Stores
       </label>
 
-      {/* ✅ Share & Earn Filter */}
+      {/* Share & Earn Filter */}
       <label className="inline-flex items-center">
         <input
           type="checkbox"
