@@ -6,7 +6,7 @@ export const CategoryProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [store, setStore] = useState([]);
 
-  // 🔥 Centralized filters state
+  // Centralized filters state
   const [filters, setFilters] = useState({
     cats: null,
     status: null,
@@ -76,7 +76,7 @@ export const CategoryProvider = ({ children }) => {
     }
   };
 
-  // ✅ Update any filter
+  // Update any filter
   const updateFilters = (key, value) => {
     setFilters((prev) => ({
       ...prev,
@@ -85,14 +85,14 @@ export const CategoryProvider = ({ children }) => {
     }));
   };
 
-  // 🎯 Get all categories initially
+  // Get all categories initially
   useEffect(() => {
     fetch("http://localhost:3001/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
 
-  // 🔄 Fetch stores based on filters
+  // Fetch stores based on filters
   useEffect(() => {
     let url = "http://localhost:3001/stores?";
     const params = [];
@@ -115,7 +115,7 @@ export const CategoryProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         setStore((prev) => {
-          // ✅ Append if page > 1, else replace
+          // Append if page > 1, else replace
           return filters.page > 1 ? [...prev, ...data] : data;
         });
       });
