@@ -33,7 +33,7 @@ const ProductShow = () => {
               rel="noopener noreferrer"
               className="border p-4 shadow rounded relative block hover:shadow-lg transition"
             >
-              {/* ❤️ Heart Icon */}
+              {/* Heart Icon */}
               <div
                 onClick={(e) => {
                   e.preventDefault();
