@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { CategoryContext } from "../Context/CategoryContext";
 
-// ✅ Display labels
+// Display labels
 const statuses = ['All', 'Active', 'Coming soon', 'Discontinued'];
 
-// ✅ Map labels to actual API status values
+// Map labels to actual API status values
 const statusMap = {
   "Active": "publish",
   "Coming soon": "draft",
@@ -17,7 +17,7 @@ const FilterDropdown = () => {
   const dropdownRef = useRef(null);
   const { updateFilters } = useContext(CategoryContext);
 
-  // ✅ Close dropdown on outside click
+  // Close dropdown on outside click
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setOpen(false);
@@ -29,7 +29,7 @@ const FilterDropdown = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // ✅ When user selects a filter option
+  // When user selects a filter option
   const handleSelect = (status) => {
     setSelected(status);
     const apiValue = status === "All" ? null : statusMap[status];
